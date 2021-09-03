@@ -40,7 +40,7 @@ if (API.substring(API.length-1) != "/")
 } 
 //var stratumAddress = window.location.hostname;           				// Stratum address is:  domain.com
 
-var stratumAddress = "stratum+tcp://pool.dillycoin.com:3333";
+var stratumAddress = "pool.dillycoin.com";
 
 
 
@@ -409,7 +409,7 @@ function loadConnectPage() {
 			}
 			connectPoolConfig += "<tr><td>Pool Fee</td><td>" + value.poolFeePercent + "%</td></tr>";
 			$.each(value.ports, function(port, options) {
-				connectPoolConfig += "<tr><td>stratum+tcp://" + coinType + "." + stratumAddress + ":" + port + "</td><td>";
+				connectPoolConfig += "<tr><td>stratum+tcp://" + stratumAddress + ":" + port + "</td><td>";
 				if (typeof options.varDiff !== "undefined" && options.varDiff != null) {
 					connectPoolConfig += "Difficulty Variable / " + options.varDiff.minDiff + " &harr; ";
 					if (typeof options.varDiff.maxDiff === "undefined" || options.varDiff.maxDiff == null) {
